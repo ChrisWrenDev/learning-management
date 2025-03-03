@@ -1,0 +1,10 @@
+**/node_modules/
+**/dist/
+
+.env
+client/.env.local
+client/.env.development
+client/.env.production
+server/.env
+
+client/.next/
