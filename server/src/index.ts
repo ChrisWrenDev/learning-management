@@ -13,6 +13,7 @@ import morgan from "morgan";
 
 /* ROUTE IMPORTS */
 import courseRoutes from "./routes/courseRoutes";
+import transactionRoutes from "./routes/transactionRoutes";
 import userClerkRoutes from "./routes/userClerkRoutes";
 
 /* CONFIGURATIONS */
@@ -43,6 +44,7 @@ app.get("/", (req, res) => {
 
 app.use("/courses", courseRoutes);
 app.use("/users/clerk", requireAuth(), userClerkRoutes);
+app.use("/transactions", requireAuth(), transactionRoutes);
 
 /* SERVER */
 const port = process.env.PORT || 3000;
