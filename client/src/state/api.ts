@@ -1,3 +1,4 @@
+import { User } from "@clerk/nextjs/server";
 import { BaseQueryApi, FetchArgs } from "@reduxjs/toolkit/query";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
