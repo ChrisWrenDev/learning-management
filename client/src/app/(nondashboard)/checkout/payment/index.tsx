@@ -2,7 +2,7 @@ import CoursePreview from "@/components/CoursePreview";
 import { Button } from "@/components/ui/button";
 import { useCheckoutNavigation } from "@/hooks/useCheckoutNavigation";
 import { useCurrentCourse } from "@/hooks/useCurrentCourse";
-// import { useCreateTransactionMutation } from "@/state/api";
+import { useCreateTransactionMutation } from "@/state/api";
 import { useClerk, useUser } from "@clerk/nextjs";
 import {
   PaymentElement,
@@ -17,7 +17,7 @@ import StripeProvider from "./StripeProvider";
 const PaymentPageContent = () => {
   const stripe = useStripe();
   const elements = useElements();
-  // const [createTransaction] = useCreateTransactionMutation();
+  const [createTransaction] = useCreateTransactionMutation();
   const { navigateToStep } = useCheckoutNavigation();
   const { course, courseId } = useCurrentCourse();
   const { user } = useUser();
@@ -54,7 +54,7 @@ const PaymentPageContent = () => {
         amount: course?.price || 0,
       };
 
-      // (await createTransaction(transactionData), navigateToStep(3));
+      (await createTransaction(transactionData), navigateToStep(3));
     }
   };
 
