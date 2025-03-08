@@ -5,6 +5,7 @@ import WizardStepper from "@/components/WizardStepper";
 import { useCheckoutNavigation } from "@/hooks/useCheckoutNavigation";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
+import CompletionPage from "./completion";
 import CheckoutDetailsPage from "./details";
 import PaymentPage from "./payment";
 
@@ -21,9 +22,9 @@ const CheckoutWizard = () => {
       case 2:
         return <PaymentPage />;
       case 3:
-        return "CompletionPage";
+        return <CompletionPage />;
       default:
-        return "CheckoutDetailsPage";
+        return <CheckoutDetailsPage />;
     }
   };
 
